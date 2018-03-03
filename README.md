@@ -1,2 +1,2 @@
 # dotfiles
-dir of essential config files
+Dir of essential config files
