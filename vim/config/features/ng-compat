@@ -1,0 +1,17 @@
+
+" NG COMPATIBILITY + TYPESCRIPT
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'leafgarland/typescript-vim'
+Plug 'quramy/tsuquyomi'
+Plug 'Quramy/vim-js-pretty-template'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'curist/vim-angular-template'
+
+let g:typescript_indent_disable = 1
+
+" let g:typescript_compiler_binary = 'tsc'
+" let g:typescript_compiler_options = ''
+
+nnoremap <Leader>td :TsuDefinition<CR>
+
+" vim:ft=vim

@@ -1,0 +1,16 @@
+
+" FILE EXPLORER >>>
+Plug 'mihaifm/vimpanel'
+
+" MKDIR >>>
+Plug 'pbrisbin/vim-mkdir'
+
+" UNIX UTILS >>>
+Plug 'tpope/vim-eunuch'
+
+" DIR NAVIGATOR >>>
+Plug 'justinmk/vim-dirvish'
+
+
+
+" vim:ft=vim

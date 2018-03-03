@@ -1,0 +1,13 @@
+
+" GIT >>>
+Plug 'tpope/vim-fugitive'
+
+" GIT GUTTER >>>
+Plug 'airblade/vim-gitgutter'
+" let g:gitgutter_map_keys=0
+let g:gitgutter_override_sign_column_highlight = 0
+
+highlight clear SignColumn
+" highlight SignColumn ctermbg=black
+
+" vim:ft=vim

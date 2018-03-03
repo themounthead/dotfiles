@@ -1,0 +1,4 @@
+pane	atm	1	:fish	1	:*	1	:/home/vijay	0	vim	:vim
+pane	atm	1	:fish	1	:*	2	:/home/vijay/Worklab/atm	1	fish	:
+window	atm	1	1	:*	c029,263x64,0,0{201x64,0,0,0,61x64,202,0,4}
+state	atm	

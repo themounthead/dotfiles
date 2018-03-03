@@ -1,0 +1,131 @@
+
+" REPEAT >>>
+Plug 'tpope/vim-repeat'
+" ------------------------------------------------------------------------------------------------------
+
+" MOVE-LINES >>>
+Plug 'matze/vim-move'
+let g:move_map_keys = 0
+nmap <C-S-Down> <Plug>MoveLineDown
+nmap <C-S-Up> <Plug>MoveLineUp
+vmap <C-S-Down> <Plug>MoveBlockDown
+vmap <C-S-Up> <Plug>MoveBlockUp
+" ------------------------------------------------------------------------------------------------------
+
+" SURROUND >>>
+Plug 'tpope/vim-surround'
+" ------------------------------------------------------------------------------------------------------
+
+"SYSTEM-COPY >>>
+Plug 'christoomey/vim-system-copy'
+" ------------------------------------------------------------------------------------------------------
+
+" MATCH TAGS >>>
+Plug 'gregsexton/matchtag'
+" ------------------------------------------------------------------------------------------------------
+
+" AUTO-CLOSE BRACKETS, QUOTES >>>
+Plug 'cohama/lexima.vim'
+" ------------------------------------------------------------------------------------------------------
+
+" CLOSE TAG >>>
+Plug 'alvan/vim-closetag'
+" ------------------------------------------------------------------------------------------------------
+
+" TEXT OBJECTS (Kryptonite) >>>
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-function'
+Plug 'beloglazov/vim-textobj-quotes'
+Plug 'glts/vim-textobj-comment'
+Plug 'rhysd/vim-textobj-anyblock'
+Plug 'rhysd/vim-textobj-word-column'
+" ------------------------------------------------------------------------------------------------------
+
+
+" EMMET >>>
+Plug 'mattn/emmet-vim'
+" let g:user_emmet_leader_key = '<c-e>'
+
+au FileType html,hbs,css,scss imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
+" tab through emmet fields
+function! s:move_to_next_emmet_area(direction)
+  " go to next item in a popup menu
+  if pumvisible()
+    if (a:direction == 0)
+      return "\<C-p>"
+    else
+      return "\<C-n>"
+    endif
+  endif
+
+  " try to determine if we're within quotes or angle brackets.
+  " if so, assume we're in an emmet fill area.
+  let line = getline('.')
+  if col('.') < len(line)
+    let line = matchstr(line, '[">][^<"]*\%'.col('.').'c[^>"]*[<"]')
+
+    if len(line) >= 2
+      if (a:direction == 0)
+        return "\<Plug>(emmet-move-prev)"
+      else
+        return "\<Plug>(emmet-move-next)"
+      endif
+    endif
+  endif
+
+  " return a regular tab character
+  return "\<tab>"
+endfunction
+
+" expand an emmet sequence like ul>li*5
+function! s:expand_emmet_sequence()
+  " first try to expand any neosnippets
+  " if neosnippet#expandable_or_jumpable()
+  "   return "\<Plug>(neosnippet_expand_or_jump)"
+  " endif
+
+  " expand anything emmet thinks is expandable
+  if emmet#isExpandable()
+    return "\<Plug>(emmet-expand-abbr)"
+  endif
+endfun
+" ------------------------------------------------------------------------------------------------------
+
+" SUPER TAB >>>
+Plug 'ervandew/supertab'
+
+set completeopt=menu,longest
+let g:SuperTabCrMapping=0
+let g:SuperTabLongestHighlight=0
+let g:SuperTabLongestEnhanced=0
+" ------------------------------------------------------------------------------------------------------
+
+" ULTIMATE SNIPS >>>
+Plug 'SirVer/ultisnips'
+
+let g:UltiSnipsSnippetsDir='~/.vim/snippets'
+let g:UltiSnipsEditSplit='vertical'
+" let g:UltiSnipsExpandTrigger           = '<C-]>'
+" let g:UltiSnipsJumpForwardTrigger      = '<C-]>'
+" let g:UltiSnipsJumpBackwardTrigger     = '<C-[>'
+
+nnoremap <leader>use :UltiSnipsEdit<cr>
+" ------------------------------------------------------------------------------------------------------
+
+" COMMENTARY >>>
+Plug 'tpope/vim-commentary'
+
+
+" INDENT DETECT FOR CODE INLINE >>>
+Plug 'ciaranm/detectindent'
+
+
+
+" vim:ft=vim
+
+
+

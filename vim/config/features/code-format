@@ -1,0 +1,56 @@
+
+" AUTO FORMAT >>>
+Plug 'chiel92/vim-autoformat'
+
+noremap <Leader>fac :Autoformat<CR>:StripWhitespace<CR>
+noremap <F3> :Autoformat<CR>:StripWhitespace<CR>:w<CR>
+inoremap <F3> <Esc>:Autoformat<CR>:StripWhitespace<CR>:w<CR>
+" autocmd BufWrite * :Autoformat
+" ---------------------------------------------------------------------------------
+
+" INDENT GUIDES >>>
+Plug 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+let g:indent_guides_auto_colors = 0
+au VimEnter,ColorScheme * hi IndentGuidesOdd  ctermbg=black
+au VimEnter,ColorScheme * hi IndentGuidesEven ctermbg=234
+" ---------------------------------------------------------------------------------
+
+" RAINBOW CODE (for those lonely days) >>>
+Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+nnoremap <Leader>rht :RainbowToggle<cr>
+" au VimEnter * RainbowToggle
+
+let g:rainbow_conf = {
+      \ 'ctermfgs': ['lightblue', 'lightgreen', 'lightcyan', 'lightmagenta'],
+      \ 'operators': '_,\|+\|-\|&&\|=>\|==\|===\|!==_',
+      \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+      \ 'separately': {
+      \   '*': {},
+      \   'vim': {
+      \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+      \   },
+      \   'xhtml': {
+      \     'parentheses': ['start=/\v\<((area|img|hr|accordion|accordion-group)[ >])@!\z([-_:*([a-zA-Z0-9\]\)]+)(\s+[-_:*([a-zA-Z0-9\]\)]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+      \   },
+      \   'css': 0,
+      \ }
+      \}
+" ---------------------------------------------------------------------------------
+
+" SEMANTIC HIGHLIGHTER >>>
+Plug 'jaxbot/semantic-highlight.vim'
+" let g:semanticTermColors = [28,1,2,3,4,5,6,7,25,9,10,34,12,13,14,15,16,19,26,27,29,30]
+let g:semanticTermColors = [37,95,105,109,110,119,120,146,147,152,153,174]
+nnoremap <Leader>sht :SemanticHighlightToggle<cr>
+" ---------------------------------------------------------------------------------
+
+
+" CLEAR WHITESPACE >>>
+Plug 'ntpeters/vim-better-whitespace'
+nnoremap <leader>wht :StripWhitespace<cr>:w<cr>
+
+" vim:ft=vim

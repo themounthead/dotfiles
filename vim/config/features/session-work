@@ -1,0 +1,61 @@
+
+" STARTIFY >>>
+Plug 'mhinz/vim-startify'
+
+let g:startify_enable_special         = 0
+let g:startify_files_number           = 8
+let g:startify_relative_path          = 1
+let g:startify_change_to_dir          = 0
+" let g:startify_session_dir            = '.'
+let g:startify_change_to_vcs_root     = 1
+let g:startify_update_oldfiles        = 1
+let g:startify_session_autoload       = 0
+let g:startify_session_persistence    = 1
+let g:startify_session_delete_buffers = 1
+
+let g:startify_bookmarks = [
+      \ { 'w': '~/Worklab' },
+      \ '~/.vim/config',
+      \ ]
+
+" let g:startify_custom_header =
+"       \ startify#fortune#cowsay('═','║','╔','╗','╝','╚')
+
+" let g:startify_custom_footer =
+"       \ ['', "   Vim is charityware. Please read ':help uganda'.", '']
+
+hi StartifyBracket ctermfg=240
+hi StartifyFile    ctermfg=147
+hi StartifyFooter  ctermfg=240
+hi StartifyHeader  ctermfg=114
+hi StartifyNumber  ctermfg=215
+hi StartifyPath    ctermfg=245
+hi StartifySlash   ctermfg=240
+hi StartifySpecial ctermfg=240
+
+nnoremap [l :Startify<cr>
+nnoremap [0 :SLoad atm<cr>
+nnoremap [1 :SLoad atm-client<cr>
+nnoremap [2 :SLoad atm-server<cr>
+
+" let g:startify_custom_header_quotes = [['line1'],['fortune']]
+" --------------------------------------------------------------------------------
+
+" TMUX HELPER >>>
+Plug 'christoomey/vim-tmux-navigator'
+
+noremap <C-Down> <C-w>h
+noremap <C-Left> <C-w>j
+noremap <C-Up> <C-w>k
+noremap <C-Right> <C-w>l
+
+if &term == 'xterm-256color'
+  let g:tmux_navigator_no_mappings = 1
+  nnoremap <silent> <C-Left> :TmuxNavigateLeft<cr>
+  nnoremap <silent> <C-Down> :TmuxNavigateDown<cr>
+  nnoremap <silent> <C-Up> :TmuxNavigateUp<cr>
+  nnoremap <silent> <C-Right> :TmuxNavigateRight<cr>
+endif
+" ---------------------------------------------------------------------------------
+
+" vim:ft=vim

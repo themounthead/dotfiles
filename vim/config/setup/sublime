@@ -1,0 +1,26 @@
+
+noremap  <C-S> :update<CR>
+vnoremap <C-S> <C-C>:update<CR>
+inoremap <C-S> <Esc>:update<CR>
+
+map <C-m> gcc<Esc>
+
+" Cut, Paste, Copy
+vmap <C-x> d
+vmap <C-v> p
+imap <C-v> <Esc>p<Esc>i
+vmap <C-c> y
+
+" " Undo, Redo (broken)
+nnoremap <C-z>  :undo<CR>
+inoremap <C-z>  <Esc>:undo<CR>
+vnoremap <C-z>  <Esc>:undo<CR>
+" nnoremap <C-y>  :redo<CR>
+" inoremap <C-y> <Esc>:redo<CR>
+
+nnoremap <C-w> :Bdelete<CR>
+nnoremap <C-q> :bufdo bd<CR>:Startify<CR>
+
+" nnoremap <C-d> viw<CR>
+
+" vim:ft=vim

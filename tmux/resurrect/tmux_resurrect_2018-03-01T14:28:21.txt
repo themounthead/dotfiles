@@ -1,0 +1,5 @@
+pane	atm	1	:editor	1	:*Z	1	:/home/vijay/.dotfiles	1	vim	:vim
+pane	atm	1	:editor	1	:*Z	2	:/home/vijay/Worklab/atm	0	npm	:npm
+pane	atm	1	:editor	1	:*Z	3	:/home/vijay	0	fish	:
+window	atm	1	1	:*Z	dff3,210x74,0,0{145x74,0,0,0,64x74,146,0[64x52,146,0,1,64x21,146,53,2]}
+state	atm	

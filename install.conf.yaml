@@ -1,0 +1,32 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.tmux:
+      path: tmux
+    ~/.tmux.conf:
+      path: tmux.conf
+    ~/.tmuxinator:
+      path: tmuxinator
+    ~/.vimrc:
+      path: vimrc
+    ~/.vim:
+      path: vim
+    ~/.bashrc:
+      path: bashrc
+    ~/.jsbeautifyrc:
+      path: jsbeautifyrc
+    ~/.gitconfig:
+      path: gitconfig
+    ~/.ctags:
+      path: ctags
+    ~/.config/fish:
+      path: fish
+    ~/.config/omf:
+      path: omf
+    ~/.config/fisherman:
+      path: fisherman
+

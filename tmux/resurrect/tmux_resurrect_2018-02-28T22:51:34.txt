@@ -1,0 +1,5 @@
+pane	atm	1	:editor	1	:*Z	1	:/home/vijay/Worklab/atm	1	vim	:vim
+pane	atm	1	:editor	1	:*Z	2	:/home/vijay/Worklab/atm	0	fish	:
+pane	atm	1	:editor	1	:*Z	3	:/home/vijay/Worklab/atm	0	fish	:
+window	atm	1	1	:*Z	78e0,210x74,0,0{165x74,0,0,0,44x74,166,0[44x52,166,0,1,44x21,166,53,2]}
+state	atm	

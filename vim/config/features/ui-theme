@@ -1,0 +1,121 @@
+
+" COLOR SCHEMES >>>
+Plug 'flazz/vim-colorschemes'
+Plug 'morhetz/gruvbox'
+Plug 'mhartington/oceanic-next'
+
+if !exists("g:syntax_on")
+  syntax enable
+endif
+
+set background=dark
+" colorscheme tir_black " black
+" colorscheme xoria256 " grey
+" colorscheme jellybeans
+" colorscheme seattle
+" colorscheme molokai_dark
+" colorscheme onedark
+" colorscheme OceanicNext
+colorscheme gruvbox " grey
+
+
+" Sets colorscheme
+" set t_Co=256 " Forces vim to use 256 terminal color range
+" if using gruvbox theme, to have italics enable
+let g:gruvbox_italic=1
+let g:enable_bold_font = 1
+let g:gruvbox_contrast_dark = "hard"
+let g:gruvbox_improved_warnings = 1
+
+" Transparent background
+autocmd ColorScheme * hi Normal ctermbg=none
+
+autocmd ColorScheme * highlight DiffAdd ctermbg=242
+autocmd ColorScheme * highlight DiffDelete ctermbg=242
+autocmd ColorScheme * highlight DiffChange ctermbg=242
+autocmd ColorScheme * highlight DiffText cterm=italic ctermbg=darkgray
+" ---------------------------------------------------------------------------------
+
+" RELATIVE NUMBERING >>>
+Plug 'myusuf3/numbers.vim'
+
+highlight LineNr ctermfg=darkgrey ctermbg=black
+highlight CursorLineNr ctermfg=lightred ctermbg=black
+
+" LIGHTLINE >>>
+Plug 'itchyny/lightline.vim'
+Plug '844196/lightline-badwolf.vim'
+" Plug 'mgee/lightline-bufferline'
+
+set hidden  " allow buffer switching without saving
+set showtabline=2  " always show tabline
+set noshowmode
+
+let g:lightline = {
+      \ 'tabline': {
+      \   'left': [
+      \             [ '' ],
+      \             [ 'separator' ],
+      \             [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
+      \   'right': [ [ 'close' ], ],
+      \ },
+      \ 'component_expand': {
+      \   'buffercurrent': 'lightline#buffer#buffercurrent',
+      \   'bufferbefore': 'lightline#buffer#bufferbefore',
+      \   'bufferafter': 'lightline#buffer#bufferafter',
+      \ },
+      \ 'component_type': {
+      \   'buffercurrent': 'tabsel',
+      \   'bufferbefore': 'raw',
+      \   'bufferafter': 'raw',
+      \ },
+      \ 'component_function': {
+      \   'bufferinfo': 'lightline#buffer#bufferinfo',
+      \ },
+      \ 'component': {
+      \   'separator': '',
+      \ },
+      \ }
+
+" remap arrow keys
+nnoremap <C-PageUp> :bprev<CR>
+nnoremap <C-PageDown> :bnext<CR>
+inoremap <C-PageUp> <Esc>:bprev<CR>
+inoremap <C-PageDown> <Esc>:bnext<CR>
+" ---------------------------------------------------------------------------------
+
+" LIGHTLINE BUFFER
+Plug 'taohex/lightline-buffer'
+" lightline-buffer ui settings
+" replace these symbols with ascii characters if your environment does not support unicode
+
+" let g:lightline.colorscheme = ''
+let g:lightline_buffer_logo = ''
+let g:lightline_buffer_readonly_icon = ''
+let g:lightline_buffer_modified_icon = '✭'
+let g:lightline_buffer_git_icon = ' '
+let g:lightline_buffer_ellipsis_icon = '..'
+let g:lightline_buffer_expand_left_icon = '◀ '
+let g:lightline_buffer_expand_right_icon = ' ▶'
+let g:lightline_buffer_active_buffer_left_icon = ''
+let g:lightline_buffer_active_buffer_right_icon = ''
+let g:lightline_buffer_separator_icon = '  '
+
+" lightline-buffer function settings
+let g:lightline_buffer_show_bufnr = 1
+let g:lightline_buffer_rotate = 0
+let g:lightline_buffer_fname_mod = ':t'
+let g:lightline_buffer_excludes = ['vimfiler']
+
+let g:lightline_buffer_maxflen = 30
+let g:lightline_buffer_maxfextlen = 3
+let g:lightline_buffer_minflen = 16
+let g:lightline_buffer_minfextlen = 3
+let g:lightline_buffer_reservelen = 20
+" ---------------------------------------------------------------------------------
+
+
+" vim:ft=vim
+"
+"
+"
