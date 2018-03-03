@@ -2,7 +2,7 @@
 " Plug 'kshenoy/vim-signature'
 " Plug 'vim-scripts/Mark-and-Highlight-Full-Lines'
 " Plug 'vim-scripts/ShowMarks'
-Plug 'jeetsukumaran/vim-markology'
+" Plug 'jeetsukumaran/vim-markology'
 
 " AUTO TAG >>>
 Plug 'craigemery/vim-autotag'

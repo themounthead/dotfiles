@@ -39,8 +39,8 @@ autocmd ColorScheme * highlight DiffText cterm=italic ctermbg=darkgray
 " RELATIVE NUMBERING >>>
 Plug 'myusuf3/numbers.vim'
 
-highlight LineNr ctermfg=darkgrey ctermbg=black
-highlight CursorLineNr ctermfg=lightred ctermbg=black
+highlight LineNr ctermfg=darkgrey ctermbg=none
+highlight CursorLineNr ctermfg=lightred ctermbg=none
 
 " LIGHTLINE >>>
 Plug 'itchyny/lightline.vim'
