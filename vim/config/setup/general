@@ -12,8 +12,8 @@ set ruler            " show the cursor position all the time
 set showcmd          " display incomplete commands
 set incsearch        " do incremental searching
 set laststatus=2     " Always display the status line
-" set autowrite        " Automatically :write before running commands
 set formatoptions-=t " Don't auto-break long lines (re-enable this for prose)
+" set autowrite        " Automatically :write before running commands
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -31,7 +31,8 @@ set cindent
 set timeoutlen=1000 ttimeoutlen=0
 
 " Display extra whitespace
-set list listchars=tab:»·,trail:·,nbsp:·
+set listchars=tab:␉·,trail:␠,nbsp:⎵
+" set list listchars=tab:»·,trail:·,nbsp:·
 
 " Use one space, not two, after punctuation.
 set nojoinspaces
@@ -41,15 +42,14 @@ set number
 set numberwidth=5
 set relativenumber
 
-set scrolloff=15
+set scrolloff=20
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.
 let g:is_posix = 1
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
-" Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
-set spellfile=$HOME/.vim-spell-en.utf-8.add
+" set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
@@ -63,12 +63,10 @@ set hidden
 set tags=./tags,tags;
 
 set cursorline
-autocmd VimEnter * highlight CursorLine ctermbg=none
-autocmd InsertEnter * highlight CursorLine ctermbg=234
-autocmd InsertLeave * highlight CursorLine ctermbg=none
 " highlight ColorColumn ctermbg=236
-
-au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+autocmd VimEnter * highlight CursorLine ctermbg=none
+autocmd InsertEnter * highlight CursorLine ctermbg=235
+autocmd InsertLeave * highlight CursorLine ctermbg=none
 
 
 " vim:ft=vim

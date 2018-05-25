@@ -7,10 +7,19 @@ Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 
 let g:ale_linters = {
+      \ 'html': ['htmlhint'],
       \ 'javascript': ['eslint'],
+      \ 'json': ['jsonlint'],
       \ 'typescript': ['tsserver'],
-      \ 'html': ['htmlhint']
       \ }
+
+let g:ale_fixers = {
+      \   'html': ['eslint'],
+      \}
+
+" Plug 'leafgarland/typescript-vim'
+
+autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 
 " nmap <silent> [r <Plug>(ale_previous_wrap)
 " nmap <silent> ]r <Plug>(ale_next_wrap)

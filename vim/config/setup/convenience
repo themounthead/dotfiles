@@ -4,6 +4,15 @@
 nmap j gj
 nmap k gk
 
+au CursorHoldI * stopinsert
+au InsertEnter * let updaterestore=&updatetime | set updatetime=15000
+au InsertLeave * let &updatetime=updaterestore
+"
+" imap <right> <Esc><right>
+" imap <left> <Esc><left>
+imap <up> <Esc><up>
+imap <down> <Esc><down>
+
 " Use C-Space to Esc out of any mode
 nnoremap <C-Space> <Esc>:noh<CR>
 vnoremap <C-Space> <Esc>gV
@@ -17,6 +26,19 @@ onoremap <C-@> <Esc>
 cnoremap <C-@> <C-c>
 inoremap <C-@> <Esc>
 
+" Enter new line in normal mode
+nnoremap lp O<Esc>j
+nnoremap l, o<Esc>k
+nnoremap ll o<Esc>k<bar>O<Esc>j
+
+" break line into new
+nnoremap <Leader>bl R<CR><Esc>
+
+" space in normal mode
+" nnoremap <space><space> i<space><esc>
+nnoremap <space> a
+
+" nnoremap <silent><leader><leader>i
 
 " Quick sourcing of the current file, allowing for quick vimrc testing
 nnoremap <leader>sop :source %<cr>
@@ -33,6 +55,7 @@ nnoremap <leader>qa :qa<CR>
 
 " Q for Ex mode is useless. This will run the macro in q register
 nnoremap Q @q
+vmap Q @q
 
 " Swap 0 and ^. I tend to want to jump to the first non-whitespace character
 " so make that the easier one to do.
@@ -58,7 +81,6 @@ augroup END
 if has('mouse') | set mouse=a | endif
 set keymodel=startsel,stopsel
 
-autocmd BufRead,BufNewFile *.gremlin set filetype=groovy
 
 " Typos
 command! -bang E e<bang>
@@ -74,18 +96,18 @@ command! -bang WQ wq<bang>
 " Switch between the last two files
 " nnoremap <leader><leader> <c-^>
 
-nnoremap <C-i> i_<Esc>r
+" nnoremap <C-i> i_<Esc>r
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
-  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-  \gvy/<C-R><C-R>=substitute(
-  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-  \gV:call setreg('"', old_reg, old_regtype)<CR>
+      \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+      \gvy/<C-R><C-R>=substitute(
+      \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+      \gV:call setreg('"', old_reg, old_regtype)<CR>
 vnoremap <silent> # :<C-U>
-  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-  \gvy?<C-R><C-R>=substitute(
-  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-  \gV:call setreg('"', old_reg, old_regtype)<CR>
+      \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+      \gvy?<C-R><C-R>=substitute(
+      \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+      \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 " vim:ft=vim

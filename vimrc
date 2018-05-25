@@ -20,7 +20,7 @@ function! s:SourceConfigFilesIn(directory)
 endfunction
 
 call plug#begin('~/.vim/bundle')
-call s:SourceConfigFilesIn('config/features')
+  call s:SourceConfigFilesIn('config/features')
 call plug#end()
 
 call s:SourceConfigFilesIn('config/setup')

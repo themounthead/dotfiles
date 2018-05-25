@@ -1,5 +1,0 @@
-pane	atm	1	:editor	1	:*	1	:/home/vijay/Worklab/atm	0	vim	:vim
-pane	atm	1	:editor	1	:*	2	:/home/vijay/Worklab/atm	1	npm	:npm
-pane	atm	1	:editor	1	:*	3	:/home/vijay/Worklab/atm/docker	0	fish	:
-window	atm	1	1	:*	2c6a,210x74,0,0{155x74,0,0,0,54x74,156,0[54x52,156,0,1,54x21,156,53,2]}
-state	atm	

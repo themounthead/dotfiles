@@ -12,6 +12,7 @@ nnoremap [p <Esc>:BuffergatorToggle<CR>
 Plug 'gwww/vim-bbye'
 
 " WINDOW PANE NAVIGATOR >>>
+" use <Leader>ww
 Plug 'wesq3/vim-windowswap'
 
 " FZF >>>
@@ -23,13 +24,12 @@ let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden'
 let $FZF_DEFAULT_OPTS = '--reverse --black '
 
 " let g:fzf_file_options =
-"   \ '--reverse '
-  " \ '--preview "coderay {} 2> /dev/null | head -'.&lines.'"'
+"       \ '--reverse '
+"       \ '--preview "cat {} 2> /dev/null | head -'.&lines.'"'
 
 nnoremap <C-p> :Files<cr>
 nnoremap <C-\> :History<CR>
-nnoremap <Leader><Leader> :FZFMru<CR>
-" nnoremap <C-f> :History/<CR>
+" nnoremap <C-=> :FZFMru<CR>
 
 " let g:fzf_layout = { 'down': '~40%' }
 
@@ -43,6 +43,7 @@ nnoremap <Leader>tag :BTags<CR>
 " let s:diff_options =
 "   \ '--reverse ' .
 "   \ '--preview "(git diff --color=always master -- {} | tail -n +5 || cat {}) 2> /dev/null | head -'.&lines.'"'
+"
 " command! BranchFiles call fzf#run(fzf#wrap('BranchFiles',
 "       \ extend(branch_files_options, { 'options': s:diff_options }), 0))
 " command! UncommitedFiles call fzf#run(fzf#wrap('UncommitedFiles',

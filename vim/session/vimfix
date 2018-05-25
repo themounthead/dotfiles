@@ -3,50 +3,27 @@ if &cp | set nocp | endif
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Worklab/atm
+cd ~/.dotfiles
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 client/src/app/routes/task/tree/task-tree.reducer.ts
-badd +1 client/src/app/routes/task/tree/task-tree.service.ts
-badd +1 client/src/app/routes/task/tree/task-tree.actions.ts
-badd +1 client/src/app/routes/task/tree/task-tree.effects.ts
-badd +132 client/src/app/routes/task/form/task-form.actions.ts
-badd +1 client/src/app/routes/task/card/task-card.component.ts
-badd +20 server/src/controllers/job.controller.js
+badd +2 ~/Worklab/spatica-sandbox/src/app/routes/page/register/register-team-gig-cost.component.ts
+badd +121 vim/config/features/code-edit
+badd +45 ~/Worklab/spatica-sandbox/src/app/routes/page/register/register-team-gig-cost.component.html
 argglobal
 silent! argdel *
-edit server/src/controllers/job.controller.js
+edit ~/Worklab/spatica-sandbox/src/app/routes/page/register/register-team-gig-cost.component.html
 set splitbelow splitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
 argglobal
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=999
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-22
-normal! zo
-32
-normal! zo
-42
-normal! zo
-65
-normal! zo
-82
-normal! zo
-let s:l = 20 - ((19 * winheight(0) + 36) / 72)
+let s:l = 42 - ((27 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-20
+42
 normal! 0
-lcd ~/Worklab/atm
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

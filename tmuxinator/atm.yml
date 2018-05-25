@@ -27,9 +27,9 @@ root: ~/Worklab/atm
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t sample
 windows:
-  - editor:
-      layout: dff3,210x74,0,0{145x74,0,0,0,64x74,146,0[64x52,146,0,1,64x21,146,53,2]}
+  - atm-dev:
+      layout: 22a4,210x74,0,0{145x74,0,0,0,64x74,146,0[64x37,146,0,1,64x36,146,38,2]}
       panes:
         - vim
-        -
-        -
+        - npm run start
+        - cd docker

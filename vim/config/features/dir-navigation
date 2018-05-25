@@ -1,6 +1,20 @@
 
 " FILE EXPLORER >>>
-Plug 'mihaifm/vimpanel'
+" Plug 'mihaifm/vimpanel'
+" let g:VimpanelWinSize=55
+" nnoremap [o :VimpanelToggleLeft<space>
+Plug 'scrooloose/nerdtree'
+nnoremap [o :NERDTreeToggle<CR>
+let g:NERDTreeWinSize=65
+let g:NERDTreeShowHidden=1
+
+cabbrev ss VimpanelSessionMake
+cabbrev sl VimpanelSessionLoad
+cabbrev vp Vimpanel
+cabbrev vl VimpanelLoad
+cabbrev vc VimpanelCreate
+cabbrev ve VimpanelEdit
+cabbrev vr VimpanelRemove
 
 " MKDIR >>>
 Plug 'pbrisbin/vim-mkdir'

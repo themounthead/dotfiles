@@ -2,6 +2,8 @@
 " REPEAT >>>
 Plug 'tpope/vim-repeat'
 " ------------------------------------------------------------------------------------------------------
+" Plug 'tpope/vim-unimpaired'
+
 
 " MOVE-LINES >>>
 Plug 'matze/vim-move'
@@ -44,12 +46,10 @@ Plug 'rhysd/vim-textobj-anyblock'
 Plug 'rhysd/vim-textobj-word-column'
 " ------------------------------------------------------------------------------------------------------
 
-
 " EMMET >>>
 Plug 'mattn/emmet-vim'
 " let g:user_emmet_leader_key = '<c-e>'
 
-au FileType html,hbs,css,scss imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " tab through emmet fields
 function! s:move_to_next_emmet_area(direction)
@@ -93,6 +93,7 @@ function! s:expand_emmet_sequence()
     return "\<Plug>(emmet-expand-abbr)"
   endif
 endfun
+
 " ------------------------------------------------------------------------------------------------------
 
 " SUPER TAB >>>
@@ -102,6 +103,24 @@ set completeopt=menu,longest
 let g:SuperTabCrMapping=0
 let g:SuperTabLongestHighlight=0
 let g:SuperTabLongestEnhanced=0
+
+
+set wildmode=list:longest,list:full
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
+endfunction
+
+au BufEnter * imap <Tab> <c-r>=InsertTabWrapper()<cr>
+au BufEnter * imap <S-Tab> <c-n>
+
+au BufEnter *.html,*.hbs imap <expr> <Tab> emmet#expandAbbrIntelligent("\<Tab>")
+
+au BufEnter *.gremlin setlocal filetype=groovy
 " ------------------------------------------------------------------------------------------------------
 
 " ULTIMATE SNIPS >>>
@@ -123,6 +142,9 @@ Plug 'tpope/vim-commentary'
 " INDENT DETECT FOR CODE INLINE >>>
 Plug 'ciaranm/detectindent'
 
+" Plug 'kana/vim-smartinput'
+Plug 'kana/vim-smartchr'
+inoremap <expr> >>  smartchr#one_of(' => ', '>')
 
 
 " vim:ft=vim

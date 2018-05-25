@@ -1,4 +1,8 @@
 package foreign-env
 package nvm
+theme beloglazov
 theme default
+theme eclm
+theme gitstatus
+theme hulk
 theme wolf-theme

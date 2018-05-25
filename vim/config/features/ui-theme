@@ -9,14 +9,14 @@ if !exists("g:syntax_on")
 endif
 
 set background=dark
-" colorscheme tir_black " black
-" colorscheme xoria256 " grey
-" colorscheme jellybeans
-" colorscheme seattle
-" colorscheme molokai_dark
 " colorscheme onedark
+" colorscheme tir_black " black
+" colorscheme jellybeans
+colorscheme janah
+" colorscheme darth
+" colorscheme heroku-terminal
 " colorscheme OceanicNext
-colorscheme gruvbox " grey
+" colorscheme gruvbox " grey
 
 
 " Sets colorscheme
@@ -24,11 +24,11 @@ colorscheme gruvbox " grey
 " if using gruvbox theme, to have italics enable
 let g:gruvbox_italic=1
 let g:enable_bold_font = 1
-let g:gruvbox_contrast_dark = "hard"
+let g:gruvbox_contrast_dark = "soft"
 let g:gruvbox_improved_warnings = 1
 
 " Transparent background
-autocmd ColorScheme * hi Normal ctermbg=none
+" autocmd ColorScheme * hi Normal ctermbg=none
 
 autocmd ColorScheme * highlight DiffAdd ctermbg=242
 autocmd ColorScheme * highlight DiffDelete ctermbg=242
@@ -39,12 +39,16 @@ autocmd ColorScheme * highlight DiffText cterm=italic ctermbg=darkgray
 " RELATIVE NUMBERING >>>
 Plug 'myusuf3/numbers.vim'
 
+" au * highlight LineNr ctermfg=darkgrey ctermbg=none
 highlight LineNr ctermfg=darkgrey ctermbg=none
-highlight CursorLineNr ctermfg=lightred ctermbg=none
+highlight CursorLineNr ctermfg=124 ctermbg=none
+au InsertEnter * highlight LineNr ctermfg=darkgrey ctermbg=233
+au InsertLeave * highlight LineNr ctermfg=darkgrey ctermbg=none
 
 " LIGHTLINE >>>
 Plug 'itchyny/lightline.vim'
 Plug '844196/lightline-badwolf.vim'
+Plug 'shirataki/lightline-onedark'
 " Plug 'mgee/lightline-bufferline'
 
 set hidden  " allow buffer switching without saving
@@ -89,7 +93,7 @@ Plug 'taohex/lightline-buffer'
 " lightline-buffer ui settings
 " replace these symbols with ascii characters if your environment does not support unicode
 
-" let g:lightline.colorscheme = ''
+let g:lightline.colorscheme = 'molokai'
 let g:lightline_buffer_logo = ''
 let g:lightline_buffer_readonly_icon = ''
 let g:lightline_buffer_modified_icon = '✭'

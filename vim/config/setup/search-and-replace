@@ -9,4 +9,12 @@ set smartcase
 nnoremap <leader>sub :%s///g<left><left><left>
 vnoremap <leader>sub :s///g<left><left><left>
 
+" run a macro in visual mode
+xnoremap @ :<C-u>call ExecuteMacroOverVisualRange()<CR>
+
+function! ExecuteMacroOverVisualRange()
+  echo "@".getcmdline()
+  execute ":'<,'>normal @".nr2char(getchar())
+endfunction
+
 " vim:ft=vim

@@ -50,6 +50,9 @@ vnoremap K :<C-u>call <sid>VisualAck()<cr>
 let g:ackprg = 'ag --nogroup --nocolor --column'
 " -------------------------------------------------------------------------------
 
+" Multi-line search replace
+Plug 'junegunn/vim-pseudocl'
+Plug 'junegunn/vim-fnr'
 
 
 " vim:ft=vim
