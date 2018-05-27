@@ -36,7 +36,7 @@ nnoremap <Leader>bl R<CR><Esc>
 
 " space in normal mode
 " nnoremap <space><space> i<space><esc>
-nnoremap <space> a
+nnoremap <space> i
 
 " nnoremap <silent><leader><leader>i
 
