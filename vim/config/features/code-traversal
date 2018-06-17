@@ -13,7 +13,7 @@ let g:autotagTagsFile="tags"
 Plug 'rhysd/clever-f.vim'
 
 " MOTION >>>
-Plug 'yuttie/comfortable-motion.vim'
+" Plug 'yuttie/comfortable-motion.vim'
 
 Plug 'bkad/camelcasemotion'
 

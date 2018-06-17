@@ -12,8 +12,10 @@ set ruler            " show the cursor position all the time
 set showcmd          " display incomplete commands
 set incsearch        " do incremental searching
 set laststatus=2     " Always display the status line
-set formatoptions-=t " Don't auto-break long lines (re-enable this for prose)
+set formatoptions-=t formatoptions-=r formatoptions-=c formatoptions-=o " Don't auto-break long lines (re-enable this for prose)
+" set formatoptions-=t
 " set autowrite        " Automatically :write before running commands
+set autoread
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -25,9 +27,13 @@ set expandtab
 set wrap
 set linebreak
 set autoindent
-set smartindent
 set cindent
+" set smartindent
 
+set lazyredraw
+set ttyfast
+
+" minimize delay on esc
 set timeoutlen=1000 ttimeoutlen=0
 
 " Display extra whitespace

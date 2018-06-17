@@ -2,9 +2,10 @@
 " BUFFERGATOR >>>
 Plug 'jeetsukumaran/vim-buffergator'
 let g:buffergator_autoupdate=1
-let g:buffergator_sort_regime="mru"
+let g:buffergator_sort_regime="bufname"
 let g:buffergator_display_regime="parentdir"
 let g:buffergator_show_full_directory_path=0
+let g:buffergator_vsplit_size=65
 nnoremap [p <Esc>:BuffergatorToggle<CR>
 " --------------------------------------------------------
 
@@ -58,5 +59,11 @@ let full_help_cmd = "cat ". s:all_help_files() ." 2> /dev/null \| grep -i '^[a-z
 
 nnoremap <silent> <leader>he :Helptags<cr>
 " --------------------------------------------------------------------------------------------------------------
+"
+" remap arrow keys
+nnoremap <C-PageUp> :bprev<CR>
+nnoremap <C-PageDown> :bnext<CR>
+inoremap <C-PageUp> <Esc>:bprev<CR>
+inoremap <C-PageDown> <Esc>:bnext<CR>
 
 " vim:ft=vim

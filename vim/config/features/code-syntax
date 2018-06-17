@@ -1,6 +1,13 @@
 
 " POLYGLOT >>>
 Plug 'sheerun/vim-polyglot'
+
+" TS Linting
+Plug 'palantir/tslint'
+
+" Markdown syntax
+Plug 'tpope/vim-markdown'
+Plug 'vim-scripts/SyntaxRange'
 " ---------------------------------------------------------------------------------------
 
 " ALE - Asynchronous linting engine >>>
@@ -10,16 +17,18 @@ let g:ale_linters = {
       \ 'html': ['htmlhint'],
       \ 'javascript': ['eslint'],
       \ 'json': ['jsonlint'],
-      \ 'typescript': ['tsserver'],
+      \ 'typescript': ['tsserver','tslint'],
       \ }
 
 let g:ale_fixers = {
       \   'html': ['eslint'],
+      \   'typescript': ['tslint'],
       \}
 
 " Plug 'leafgarland/typescript-vim'
 
-autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+au BufEnter *.gremlin setlocal filetype=groovy
+au FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 
 " nmap <silent> [r <Plug>(ale_previous_wrap)
 " nmap <silent> ]r <Plug>(ale_next_wrap)
@@ -28,8 +37,9 @@ autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()
 " either when wntering / leaving / stop interacting
 " insert mode
 set updatetime=1000
-autocmd CursorHold * call ale#Lint()
+" autocmd CursorHold * call ale#Lint()
 autocmd CursorHoldI * call ale#Lint()
+autocmd InsertEnter * call ale#Lint()
 autocmd InsertLeave * call ale#Lint()
 autocmd TextChanged * call ale#Lint()
 
@@ -38,6 +48,9 @@ let g:ale_completion_enabled = 1
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 let g:ale_set_highlights = 0
+let g:ale_lint_delay = 1500
+
+" autocmd InsertEnter * let g:ale_set_highlights = 0
 " ----------------------------------------------------------------------------------------
 
 " vim:ft=vim

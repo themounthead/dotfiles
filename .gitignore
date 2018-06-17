@@ -2,3 +2,4 @@ tmux/resurrect/
 *.log.*
 *.log
 vim/bundle/
+vim/session/

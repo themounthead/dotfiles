@@ -47,8 +47,8 @@ au InsertLeave * highlight LineNr ctermfg=darkgrey ctermbg=none
 
 " LIGHTLINE >>>
 Plug 'itchyny/lightline.vim'
-Plug '844196/lightline-badwolf.vim'
-Plug 'shirataki/lightline-onedark'
+" Plug '844196/lightline-badwolf.vim'
+" Plug 'shirataki/lightline-onedark'
 " Plug 'mgee/lightline-bufferline'
 
 set hidden  " allow buffer switching without saving
@@ -75,17 +75,13 @@ let g:lightline = {
       \ },
       \ 'component_function': {
       \   'bufferinfo': 'lightline#buffer#bufferinfo',
+      \   'gitbranch': 'fugitive#head',
       \ },
       \ 'component': {
       \   'separator': '',
       \ },
       \ }
 
-" remap arrow keys
-nnoremap <C-PageUp> :bprev<CR>
-nnoremap <C-PageDown> :bnext<CR>
-inoremap <C-PageUp> <Esc>:bprev<CR>
-inoremap <C-PageDown> <Esc>:bnext<CR>
 " ---------------------------------------------------------------------------------
 
 " LIGHTLINE BUFFER

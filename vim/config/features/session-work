@@ -40,6 +40,7 @@ hi StartifySpecial ctermfg=240
 nnoremap <leader>ss :SSave<space>
 nnoremap <leader>sl :SLoad<space>
 nnoremap <leader>sd :SDelete<space>
+nnoremap <leader>sc :SClose<CR>
 
 nnoremap [l :Startify<cr>
 " nnoremap [0 :SLoad atm<cr>

@@ -27,8 +27,8 @@ cnoremap <C-@> <C-c>
 inoremap <C-@> <Esc>
 
 " Enter new line in normal mode
-nnoremap lp O<Esc>j
-nnoremap l, o<Esc>k
+nnoremap lp O<Esc>
+nnoremap l, o<Esc>,
 nnoremap ll o<Esc>k<bar>O<Esc>j
 
 " break line into new
@@ -37,7 +37,7 @@ nnoremap <Leader>bl R<CR><Esc>
 " space in normal mode
 " nnoremap <space><space> i<space><esc>
 nnoremap <space> i
-
+"
 " nnoremap <silent><leader><leader>i
 
 " Quick sourcing of the current file, allowing for quick vimrc testing
@@ -50,7 +50,8 @@ nnoremap <leader>' :
 nmap <leader>pi :PlugInstall<cr>
 
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
-nnoremap <leader>q :q<CR>
+nnoremap <leader>pd :pwd<CR>
+nnoremap <leader>qq :q<CR>
 nnoremap <leader>qa :qa<CR>
 
 " Q for Ex mode is useless. This will run the macro in q register
@@ -92,6 +93,8 @@ command! -bang Wa wa<bang>
 command! -bang WA wa<bang>
 command! -bang Wq wq<bang>
 command! -bang WQ wq<bang>
+
+" nnoremap <leader>tap :set nomore<bar>ls<bar>set more<cr>:buffer<space>
 
 " Switch between the last two files
 " nnoremap <leader><leader> <c-^>
