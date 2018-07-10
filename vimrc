@@ -25,3 +25,9 @@ call plug#end()
 
 call s:SourceConfigFilesIn('config/setup')
 
+" if exists("g:loaded_webdevicons")
+"   call webdevicons#refresh()
+" endif
+
+" execute 'source' '~/.vim/bundle/vim-devicons'
+

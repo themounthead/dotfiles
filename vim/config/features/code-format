@@ -7,10 +7,14 @@ let g:formatdef_custom_groovy='"astyle --style=google -s2 -O"'
 let g:formatters_groovy=['custom_groovy']
 " let g:autoformat_verbosemode=1
 
-noremap <Leader>fac :Autoformat<CR>:StripWhitespace<CR>
-noremap <F3> :Autoformat<CR>:StripWhitespace<CR>:w<CR>
 noremap <Leader>fix :ALEFix<CR>
-inoremap <F3> <Esc>:Autoformat<CR>:StripWhitespace<CR>:ALEFix<CR>:w<CR>
+noremap <Leader>fac :Autoformat<CR>:StripWhitespace<CR>
+
+noremap <F2> :ALEFix<CR>
+inoremap <F2> <Esc>:ALEFix<CR>
+
+noremap <F3> :Autoformat<CR>:StripWhitespace<CR>:w<CR>
+inoremap <F3> <Esc>:Autoformat<CR>:StripWhitespace<CR>:w<CR>
 " autocmd BufWrite * :Autoformat
 " ---------------------------------------------------------------------------------
 
@@ -62,7 +66,7 @@ nnoremap <Leader>sht :SemanticHighlightToggle<cr>
 " ---------------------------------------------------------------------------------
 
 Plug 'thiagoalessio/rainbow_levels.vim'
-
+nnoremap <Leader>rlt :RainbowLevelsToggle<cr>
 
 " CLEAR WHITESPACE >>>
 Plug 'ntpeters/vim-better-whitespace'

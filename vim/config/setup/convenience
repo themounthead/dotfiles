@@ -8,10 +8,10 @@ au CursorHoldI * stopinsert
 au InsertEnter * let updaterestore=&updatetime | set updatetime=15000
 au InsertLeave * let &updatetime=updaterestore
 "
-" imap <right> <Esc><right>
-" imap <left> <Esc><left>
-imap <up> <Esc><up>
-imap <down> <Esc><down>
+imap <c-left> <Esc><left>
+imap <c-right> <Esc><right>
+imap <c-up> <Esc><up><right>
+imap <c-down> <Esc><down><right>
 
 " Use C-Space to Esc out of any mode
 nnoremap <C-Space> <Esc>:noh<CR>
@@ -27,15 +27,20 @@ cnoremap <C-@> <C-c>
 inoremap <C-@> <Esc>
 
 " Enter new line in normal mode
-nnoremap lp O<Esc>
-nnoremap l, o<Esc>,
+nnoremap lk O<Esc>
+nnoremap lj o<Esc>,
 nnoremap ll o<Esc>k<bar>O<Esc>j
+
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
+xnoremap <leader>p "_dP
 
 " break line into new
 nnoremap <Leader>bl R<CR><Esc>
 
 " space in normal mode
-" nnoremap <space><space> i<space><esc>
+nnoremap <leader><space> i<space><esc>
+
 nnoremap <space> i
 "
 " nnoremap <silent><leader><leader>i
@@ -46,12 +51,14 @@ nnoremap <leader>sop :source %<cr>
 nnoremap <leader>dc :Files ~/.vim/config<cr>
 nnoremap <leader>ds :Files ~/.vim/config/setup<cr>
 nnoremap <leader>df :Files ~/.vim/config/features<cr>
+
 nnoremap <leader>' :
 nmap <leader>pi :PlugInstall<cr>
 
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <leader>pd :pwd<CR>
-nnoremap <leader>qq :q<CR>
+
+nnoremap <leader>q :q<CR>
 nnoremap <leader>qa :qa<CR>
 
 " Q for Ex mode is useless. This will run the macro in q register
@@ -63,10 +70,13 @@ vmap Q @q
 nnoremap 0 ^
 nnoremap ^ 0
 
+map <c-home> 0
+map <c-end> $
+
 noremap Y y$
 
-noremap n nzz
-noremap N Nzz
+" noremap n nzz
+" noremap N Nzz
 
 augroup vimrcEx
   autocmd!

@@ -1,7 +1,4 @@
 
-" Plug 'kshenoy/vim-signature'
-" Plug 'vim-scripts/Mark-and-Highlight-Full-Lines'
-" Plug 'vim-scripts/ShowMarks'
 Plug 'jeetsukumaran/vim-markology'
 
 " AUTO TAG >>>
@@ -32,7 +29,19 @@ Plug 'jeetsukumaran/vim-indentwise'
 Plug 'nelstrom/vim-visual-star-search'
 
 " MULTI CURSORS
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'
+let g:VM_sublime_mappings=0
+" Plug 'terryma/vim-multiple-cursors'
 " let g:multi_cursor_exit_from_insert_mode = 0
+
+" MOVE-LINES >>>
+Plug 'matze/vim-move'
+let g:move_map_keys = 0
+nmap <C-S-Down> <Plug>MoveLineDown
+nmap <C-S-Up> <Plug>MoveLineUp
+vmap <C-S-Down> <Plug>MoveBlockDown
+vmap <C-S-Up> <Plug>MoveBlockUp
+" ------------------------------------------------------------------------------------------------------
+
 
 " vim:ft=vim

@@ -23,7 +23,6 @@ vnoremap <C-z>  <Esc>:undo<CR>
 nnoremap <C-w> :Bdelete<CR>
 nnoremap <C-q> :bufdo bd<CR>:Startify<CR>
 
-nnoremap <Leader>bo :BufOnly<CR>
 
 " nnoremap <C-d> viw<CR>
 

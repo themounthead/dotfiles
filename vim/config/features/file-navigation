@@ -24,9 +24,10 @@ Plug 'pbogut/fzf-mru.vim'
 let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden'
 let $FZF_DEFAULT_OPTS = '--reverse --black '
 
-" let g:fzf_file_options =
-"       \ '--reverse '
-"       \ '--preview "cat {} 2> /dev/null | head -'.&lines.'"'
+
+let g:fzf_files_options =
+  \ '--reverse ' .
+  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 
 nnoremap <C-p> :Files<cr>
 nnoremap <C-\> :History<CR>

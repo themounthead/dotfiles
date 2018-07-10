@@ -1,7 +1,7 @@
 # ~/.tmuxinator/sample.yml
 
-name: atm
-root: ~/Worklab/atm
+name: spatica
+root: ~/Worklab/spatica-ng6-seed
 
 # Optional tmux socket
 # socket_name: foo
@@ -28,8 +28,8 @@ tmux_options: -u
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t sample
 windows:
-  - atm-dev:
-      layout: 22a4,210x74,0,0{145x74,0,0,0,64x74,146,0[64x37,146,0,1,64x36,146,38,2]}
+  - spatica-dev:
+      layout: main-horizontal
       panes:
         - vim
         -

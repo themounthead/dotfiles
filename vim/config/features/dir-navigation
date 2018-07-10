@@ -1,20 +1,10 @@
 
 " FILE EXPLORER >>>
-" Plug 'mihaifm/vimpanel'
-" let g:VimpanelWinSize=55
-" nnoremap [o :VimpanelToggleLeft<space>
-" cabbrev ss VimpanelSessionMake
-" cabbrev sl VimpanelSessionLoad
-" cabbrev vp Vimpanel
-" cabbrev vl VimpanelLoad
-" cabbrev vc VimpanelCreate
-" cabbrev ve VimpanelEdit
-" cabbrev vr VimpanelRemove
-
 " Plug 'jeetsukumaran/vim-filebeagle'
 
 Plug 'scrooloose/nerdtree'
 nnoremap [o :NERDTreeToggle<CR>
+nnoremap [f :NERDTreeFind<cr>
 let g:NERDTreeWinSize=65
 let g:NERDTreeShowHidden=1
 

@@ -62,6 +62,7 @@ function! BufOnly(buffer, bang)
 
 endfunction
 
+nnoremap <Leader>bo :BufOnly<CR>
 
 " set vim:ft=vim
 

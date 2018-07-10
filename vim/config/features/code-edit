@@ -7,17 +7,9 @@ Plug 'tpope/vim-repeat'
 " Plug 'tpope/vim-unimpaired'
 
 
-" MOVE-LINES >>>
-Plug 'matze/vim-move'
-let g:move_map_keys = 0
-nmap <C-S-Down> <Plug>MoveLineDown
-nmap <C-S-Up> <Plug>MoveLineUp
-vmap <C-S-Down> <Plug>MoveBlockDown
-vmap <C-S-Up> <Plug>MoveBlockUp
-" ------------------------------------------------------------------------------------------------------
-
 " SURROUND >>>
 Plug 'tpope/vim-surround'
+" Use 'S' for visual selection surround
 " ------------------------------------------------------------------------------------------------------
 
 "SYSTEM-COPY >>>
@@ -33,7 +25,10 @@ Plug 'cohama/lexima.vim'
 " ------------------------------------------------------------------------------------------------------
 
 " CLOSE TAG >>>
-Plug 'alvan/vim-closetag'
+Plug 'jiangmiao/auto-pairs'
+let g:AutoPairsMapCR = 0
+" Plug 'alvan/vim-closetag'
+" execute 'inoremap <buffer> <silent> <CR> <C-R>=AutoPairsReturn()<CR>'
 " ------------------------------------------------------------------------------------------------------
 
 " TEXT OBJECTS (Kryptonite) >>>
@@ -55,7 +50,9 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
 let g:user_emmet_mode='a'    "enable all function in all mode.
-" let g:user_emmet_leader_key = '<c-y>'
+let g:user_emmet_leader_key = ','
+" let g:user_emmet_expandabbr_key='<Tab>'
+" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 " SUPER TAB >>>
 Plug 'ervandew/supertab'
@@ -67,17 +64,17 @@ let g:SuperTabLongestEnhanced=0
 
 set wildmode=list:longest,list:full
 
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-p>"
-  endif
-endfunction
+" function! InsertTabWrapper()
+"   let col = col('.') - 1
+"   if !col || getline('.')[col - 1] !~ '\k'
+"     return "\<tab>"
+"   else
+"     return "\<c-p>"
+"   endif
+" endfunction
 
 " au BufEnter * imap <Tab> <c-r>=InsertTabWrapper()<cr>
-au BufEnter * imap <S-Tab> <c-n>
+" au BufEnter * imap <S-Tab> <c-n>
 
 
 " ------------------------------------------------------------------------------------------------------
@@ -107,17 +104,24 @@ Plug 'honza/vim-snippets'
 
 
 " let g:UltiSnipsSnippetsDir='~/.vim/snippets'
-" let g:UltiSnipsEditSplit='vertical'
 " let g:UltiSnipsExpandTrigger           = '<C-]>'
-let g:UltiSnipsJumpForwardTrigger      = '<C-b>'
-" let g:UltiSnipsJumpBackwardTrigger     = '<C-2>'
+let g:UltiSnipsEditSplit='vertical'
+let g:UltiSnipsJumpForwardTrigger='<C-l>'
+let g:UltiSnipsJumpBackwardTrigger='<C-h>'
 
 " nnoremap <leader>use :UltiSnipsEdit<cr>
 " ------------------------------------------------------------------------------------------------------
 
 Plug 'vim-scripts/vim-task-org'
 let g:vtoCommDictNew = {'typescript': '// '}
-map <leader>do :Ti<CR>
+
+map <leader>dod :Ti<CR>TODO...<space>
+map <leader>dot :Ti<CR>TRICKY...<space>
+map <leader>dof :Ti<CR>FIXME...<space>
+map <leader>dob :Ti<CR>BUG...<space>
+map <leader>dow :Ti<CR>WARNING...<space>
+map <leader>don :Tn<CR>NOTES...<space>
+
 " map <leader>id :Di<CR>
 " map <F5> :Vt<CR>
 " map <C-CR> :Jt<CR>
