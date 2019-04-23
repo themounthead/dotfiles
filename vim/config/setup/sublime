@@ -3,9 +3,10 @@ noremap  <C-S> :update<CR>
 vnoremap <C-S> <C-C>:update<CR>
 inoremap <C-S> <Esc>:update<CR>
 
-nmap <C-m> gcc<Esc>
-vmap <C-m> gcc<Esc>
-imap <C-m> <Esc>gcc<Esc>A
+nmap <C-_> gcc<Esc>
+" nmap // i//<space>
+vmap <C-_> gcc<Esc>
+imap <C-_> <Esc>gcc<Esc>A
 
 " Cut, Paste, Copy
 vmap <C-x> d

@@ -29,8 +29,8 @@ Plug 'jeetsukumaran/vim-indentwise'
 Plug 'nelstrom/vim-visual-star-search'
 
 " MULTI CURSORS
-Plug 'mg979/vim-visual-multi'
-let g:VM_sublime_mappings=0
+" Plug 'mg979/vim-visual-multi'
+" let g:VM_sublime_mappings=0
 " Plug 'terryma/vim-multiple-cursors'
 " let g:multi_cursor_exit_from_insert_mode = 0
 

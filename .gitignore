@@ -1,5 +1,6 @@
 tmux/resurrect/
 *.log.*
 *.log
+ctags
 vim/bundle/
 vim/session/

@@ -4,9 +4,9 @@
 nmap j gj
 nmap k gk
 
-au CursorHoldI * stopinsert
-au InsertEnter * let updaterestore=&updatetime | set updatetime=15000
-au InsertLeave * let &updatetime=updaterestore
+" au CursorHoldI * stopinsert
+" au InsertEnter * let updaterestore=&updatetime | set updatetime=5000
+" au InsertLeave * let &updatetime=updaterestore
 "
 imap <c-left> <Esc><left>
 imap <c-right> <Esc><right>
@@ -30,6 +30,8 @@ inoremap <C-@> <Esc>
 nnoremap lk O<Esc>
 nnoremap lj o<Esc>,
 nnoremap ll o<Esc>k<bar>O<Esc>j
+
+nnoremap yp yyp;
 
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d

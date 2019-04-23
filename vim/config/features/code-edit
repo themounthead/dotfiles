@@ -31,6 +31,9 @@ let g:AutoPairsMapCR = 0
 " execute 'inoremap <buffer> <silent> <CR> <C-R>=AutoPairsReturn()<CR>'
 " ------------------------------------------------------------------------------------------------------
 
+Plug 'alvan/vim-closetag'
+
+
 " TEXT OBJECTS (Kryptonite) >>>
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
@@ -58,9 +61,11 @@ let g:user_emmet_leader_key = ','
 Plug 'ervandew/supertab'
 
 set completeopt=menu,longest
-let g:SuperTabCrMapping=0
+let g:SuperTabCrMapping=1
 let g:SuperTabLongestHighlight=0
 let g:SuperTabLongestEnhanced=0
+let g:SuperTabDefaultCompletionType="<c-n>"
+let g:SuperTabContextDefaultCompletionType="<c-n>"
 
 set wildmode=list:longest,list:full
 
@@ -106,8 +111,8 @@ Plug 'honza/vim-snippets'
 " let g:UltiSnipsSnippetsDir='~/.vim/snippets'
 " let g:UltiSnipsExpandTrigger           = '<C-]>'
 let g:UltiSnipsEditSplit='vertical'
-let g:UltiSnipsJumpForwardTrigger='<C-l>'
-let g:UltiSnipsJumpBackwardTrigger='<C-h>'
+let g:UltiSnipsJumpForwardTrigger='<c-n>'
+let g:UltiSnipsJumpBackwardTrigger='<c-p>'
 
 " nnoremap <leader>use :UltiSnipsEdit<cr>
 " ------------------------------------------------------------------------------------------------------
@@ -120,7 +125,7 @@ map <leader>dot :Ti<CR>TRICKY...<space>
 map <leader>dof :Ti<CR>FIXME...<space>
 map <leader>dob :Ti<CR>BUG...<space>
 map <leader>dow :Ti<CR>WARNING...<space>
-map <leader>don :Tn<CR>NOTES...<space>
+map <leader>don :Ti<CR>NOTES...<space>
 
 " map <leader>id :Di<CR>
 " map <F5> :Vt<CR>
@@ -137,6 +142,13 @@ Plug 'jason0x43/vim-js-indent'
 " Plug 'kana/vim-smartinput'
 " Plug 'kana/vim-smartchr'
 " inoremap <expr> >>  smartchr#one_of(' => ', '>')
+
+Plug 'benmills/vimux'
+Plug 'tyewang/vimux-jest-test'
+
+
+" MATCH LINES >>>
+imap <c-f><c-s> <plug>(fzf-complete-line)
 
 
 " vim:ft=vim

@@ -44,8 +44,12 @@ set ttyfast
 
 set updatetime=1000
 
+
 " minimize delay on esc
-set timeoutlen=500 ttimeoutlen=0
+" set timeoutlen=500 ttimeoutlen=0
+set ttimeoutlen=0
+autocmd InsertEnter * set timeoutlen=200
+autocmd InsertLeave * set timeoutlen=1000
 
 " Display extra whitespace
 set listchars=tab:␉·,trail:␠,nbsp:⎵

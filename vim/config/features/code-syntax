@@ -31,7 +31,7 @@ let g:ale_fixers = {
 " Plug 'leafgarland/typescript-vim'
 
 au BufEnter *.gremlin setlocal filetype=groovy
-au FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+au FileType typescript nmap <buffer> <Leader>tip : <C-u>echo tsuquyomi#hint()<CR>
 
 " nmap <silent> [r <Plug>(ale_previous_wrap)
 " nmap <silent> ]r <Plug>(ale_next_wrap)
@@ -40,10 +40,10 @@ au FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
 " either when wntering / leaving / stop interacting
 " insert mode
 " autocmd CursorHold * call ale#Lint()
-autocmd CursorHoldI * call ale#Lint()
-autocmd InsertEnter * call ale#Lint()
-autocmd InsertLeave * call ale#Lint()
-autocmd TextChanged * call ale#Lint()
+" autocmd CursorHoldI * call ale#Lint()
+" autocmd InsertEnter * call ale#Lint()
+" autocmd InsertLeave * call ale#Lint()
+" autocmd TextChanged * call ale#Lint()
 
 let g:ale_lint_on_text_changed = 0
 let g:ale_completion_enabled = 1

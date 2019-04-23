@@ -22,18 +22,18 @@ Plug 'junegunn/fzf.vim'
 Plug 'pbogut/fzf-mru.vim'
 
 let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden'
-let $FZF_DEFAULT_OPTS = '--reverse --black '
+let $FZF_DEFAULT_OPTS = '--reverse --black'
 
+let g:fzf_layout={'down': '75%'}
+let g:fzf_files_options="--ansi --preview-window 'right:60%' --preview 'bat --theme=TwoDark --color=always --style=header,grid,numbers,changes --line-range :300 {}'"
 
-let g:fzf_files_options =
-  \ '--reverse ' .
-  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+" let g:fzf_files_options =
+"                   \ '--reverse ' .
+"                   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 
 nnoremap <C-p> :Files<cr>
 nnoremap <C-\> :History<CR>
-" nnoremap <C-=> :FZFMru<CR>
-
-" let g:fzf_layout = { 'down': '~40%' }
+nnoremap <C-]> :FZFMru<CR>
 
 nnoremap <Leader>get :call fzf#vim#tags(expand('<cword>'), {'options': '--exact --select-1 --exit-0'})<CR>
 nnoremap <Leader>tag :BTags<CR>
@@ -54,7 +54,7 @@ nnoremap <Leader>tag :BTags<CR>
 " nnoremap <silent> <leader>GP :UncommitedFiles<cr>
 
 function! s:all_help_files()
-  return join(map(split(&runtimepath, ','), 'v:val ."\/doc\/tags"'), ' ')
+      return join(map(split(&runtimepath, ','), 'v:val ."\/doc\/tags"'), ' ')
 endfunction
 let full_help_cmd = "cat ". s:all_help_files() ." 2> /dev/null \| grep -i '^[a-z]' \| awk '{print $1}' \| sort"
 
@@ -64,7 +64,7 @@ nnoremap <silent> <leader>he :Helptags<cr>
 " remap arrow keys
 nnoremap <C-PageUp> :bprev<CR>
 nnoremap <C-PageDown> :bnext<CR>
-inoremap <C-PageUp> <Esc>:bprev<CR>
-inoremap <C-PageDown> <Esc>:bnext<CR>
+inoremap <C-PageUp> <Esc>:bprev<CR>i
+inoremap <C-PageDown> <Esc>:bnext<CR>i
 
 " vim:ft=vim

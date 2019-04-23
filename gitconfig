@@ -1,7 +1,7 @@
 [user]
-	name = Vijay S
-	email = vijay@themounthead.com
-	username = themounthead
+	name = Vijay
+	email = vijays@legalcraft.com
+	username = vijays
 [core]
 	editor = vim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
