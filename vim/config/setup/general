@@ -16,7 +16,6 @@ set formatoptions-=t formatoptions-=r formatoptions-=c formatoptions-=o " Don't 
 " set formatoptions-=t
 " set autowrite        " Automatically :write before running commands
 set autoread
-
 " Triger `autoread` when files changes on disk
 " https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
 " https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
@@ -24,7 +23,7 @@ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checkti
 " Notification after file change
 " https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
 autocmd FileChangedShellPost *
-  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+      \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -43,7 +42,6 @@ set lazyredraw
 set ttyfast
 
 set updatetime=1000
-
 
 " minimize delay on esc
 " set timeoutlen=500 ttimeoutlen=0
@@ -64,6 +62,9 @@ set numberwidth=5
 set relativenumber
 
 set scrolloff=20
+
+set undofile
+set undodir=~/.vim/.undo
 
 " When the type of shell script is /bin/sh, assume a POSIX-compatible
 " shell for syntax highlighting purposes.

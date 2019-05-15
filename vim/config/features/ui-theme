@@ -1,16 +1,20 @@
 
 " COLOR SCHEMES >>>
 Plug 'flazz/vim-colorschemes'
-Plug 'morhetz/gruvbox'
-Plug 'mhartington/oceanic-next'
-
+" Plug 'morhetz/gruvbox'
+" Plug 'mhartington/oceanic-next'
+" Plug 'cocopon/iceberg.vim'
 
 if !exists("g:syntax_on")
       syntax enable
 endif
 
+" set termguicolors
+
 set background=dark
 colorscheme janah
+" colorscheme iceberg
+" colorscheme sacredforest
 " colorscheme onedark
 " colorscheme tir_black " black
 " colorscheme jellybeans
@@ -23,13 +27,13 @@ colorscheme janah
 " Sets colorscheme
 " set t_Co=256 " Forces vim to use 256 terminal color range
 " if using gruvbox theme, to have italics enable
-let g:gruvbox_italic=1
-let g:enable_bold_font = 1
-let g:gruvbox_contrast_dark = "hard"
-let g:gruvbox_improved_warnings = 1
+" let g:gruvbox_italic=1
+" let g:enable_bold_font = 1
+" let g:gruvbox_contrast_dark = "hard"
+" let g:gruvbox_improved_warnings = 1
 
 " Transparent background
-" autocmd ColorScheme * hi Normal ctermbg=none
+" autocmd ColorScheme * highlight Normal guibg=none ctermbg=none
 
 autocmd ColorScheme * highlight DiffAdd ctermbg=242
 autocmd ColorScheme * highlight DiffDelete ctermbg=242
@@ -63,6 +67,10 @@ let g:lightline = {
                   \             [ 'separator' ],
                   \             [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
                   \   'right': [ [ 'close' ], ],
+                  \ },
+                  \ 'active': {
+                  \   'left': [ [ 'mode', 'paste' ],
+                  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
                   \ },
                   \ 'component_expand': {
                   \   'buffercurrent': 'lightline#buffer#buffercurrent',
@@ -117,7 +125,7 @@ let g:lightline_buffer_active_buffer_right_icon = ''
 let g:lightline_buffer_separator_icon = '  '
 " ---------------------------------------------------------------------------------
 
-
+" DEV ICONS
 Plug 'ryanoasis/vim-devicons'
 
 " set guifont='nerd'

@@ -33,10 +33,6 @@ nnoremap ll o<Esc>k<bar>O<Esc>j
 
 nnoremap yp yyp;
 
-nnoremap <leader>d "_d
-xnoremap <leader>d "_d
-xnoremap <leader>p "_dP
-
 " break line into new
 nnoremap <Leader>bl R<CR><Esc>
 

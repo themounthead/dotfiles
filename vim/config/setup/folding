@@ -2,7 +2,7 @@
 "------------------------
 
 "Enable indent folding
-set foldenable
+set nofoldenable
 set foldmethod=indent
 set foldlevel=999
 
@@ -12,13 +12,13 @@ nnoremap <leader>ff za
 nnoremap <leader>FF zA
 
 "Maps for folding, unfolding all
-nnoremap <LEADER>fu zM<CR>
-nnoremap <LEADER>uf zR<CR>
+nnoremap <Leader>fu :set foldenable<CR>
+nnoremap <Leader>uf :set nofoldenable<CR>
 
-nnoremap <Leader>f1 :set foldlevel=1<CR>
-nnoremap <Leader>f2 :set foldlevel=2<CR>
-nnoremap <Leader>f3 :set foldlevel=3<CR>
-nnoremap <Leader>f4 :set foldlevel=4<CR>
-nnoremap <Leader>f5 :set foldlevel=5<CR>
+nnoremap <Leader>f1 :set foldenable foldlevel=1<CR>
+nnoremap <Leader>f2 :set foldenable foldlevel=2<CR>
+nnoremap <Leader>f3 :set foldenable foldlevel=3<CR>
+nnoremap <Leader>f4 :set foldenable foldlevel=4<CR>
+nnoremap <Leader>f5 :set foldenable foldlevel=5<CR>
 
 " vim:ft=vim

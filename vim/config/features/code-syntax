@@ -5,12 +5,19 @@ Plug 'sheerun/vim-polyglot'
 " Nginx >>>
 Plug 'vim-scripts/nginx.vim'
 
-" TS Linting
+" TS Linting >>>
 Plug 'palantir/tslint'
 
-" Markdown syntax
+" Markdown syntax >>>
 Plug 'tpope/vim-markdown'
 Plug 'vim-scripts/SyntaxRange'
+
+" JSON syntax >>>
+Plug 'elzr/vim-json'
+
+" Css >>>
+Plug 'hail2u/vim-css3-syntax'
+
 " ---------------------------------------------------------------------------------------
 
 " ALE - Asynchronous linting engine >>>

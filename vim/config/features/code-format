@@ -35,6 +35,9 @@ au VimEnter,ColorScheme * hi IndentGuidesOdd  ctermbg=black
 au VimEnter,ColorScheme * hi IndentGuidesEven ctermbg=234
 " ---------------------------------------------------------------------------------
 
+" PASTE AND INDENT >>>
+Plug 'sickill/vim-pasta'
+
 " RAINBOW CODE (for those lonely days) >>>
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
@@ -42,20 +45,20 @@ nnoremap <Leader>rht :RainbowToggle<cr>
 " au VimEnter * RainbowToggle
 
 let g:rainbow_conf = {
-      \ 'ctermfgs': ['lightblue', 'lightgreen', 'lightcyan', 'lightmagenta'],
-      \ 'operators': '_,\|+\|-\|&&\|=>\|==\|===\|!==_',
-      \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-      \ 'separately': {
-      \   '*': {},
-      \   'vim': {
-      \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-      \   },
-      \   'xhtml': {
-      \     'parentheses': ['start=/\v\<((area|img|hr|accordion|accordion-group)[ >])@!\z([-_:*([a-zA-Z0-9\]\)]+)(\s+[-_:*([a-zA-Z0-9\]\)]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-      \   },
-      \   'css': 0,
-      \ }
-      \}
+                  \ 'ctermfgs': ['lightblue', 'lightgreen', 'lightcyan', 'lightmagenta'],
+                  \ 'operators': '_,\|+\|-\|&&\|=>\|==\|===\|!==_',
+                  \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+                  \ 'separately': {
+                  \   '*': {},
+                  \   'vim': {
+                  \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+                  \   },
+                  \   'xhtml': {
+                  \     'parentheses': ['start=/\v\<((area|img|hr|accordion|accordion-group)[ >])@!\z([-_:*([a-zA-Z0-9\]\)]+)(\s+[-_:*([a-zA-Z0-9\]\)]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+                  \   },
+                  \   'css': 0,
+                  \ }
+                  \}
 " ---------------------------------------------------------------------------------
 
 " SEMANTIC HIGHLIGHTER >>>
