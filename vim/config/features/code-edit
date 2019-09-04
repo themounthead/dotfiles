@@ -1,5 +1,10 @@
 " GIT >>>
 Plug 'tpope/vim-fugitive'
+
+
+" GIT MERGE
+Plug 'idanarye/vim-merginal'
+let g:merginal_windowWidth = 75
 " ------------------------------------------------------------------------------------------------------
 
 " REPEAT >>>
@@ -26,6 +31,14 @@ Plug 'cohama/lexima.vim'
 let g:lexima_enable_newline_rules=1
 " ------------------------------------------------------------------------------------------------------
 
+" CUTLASS >>>
+Plug 'svermeulen/vim-cutlass'
+nnoremap x d
+xnoremap x d
+
+nnoremap xx dd
+" nnoremap X D
+
 " YANK RING >>>
 Plug 'vim-scripts/YankRing.vim'
 nnoremap <silent> <F9> :YRShow<CR>
@@ -35,15 +48,6 @@ let yankring_replace_p_pkey = '<C-b>'
 
 Plug 'machakann/vim-highlightedyank'
 " Plug 'svermeulen/vim-yoink'
-
-" CUTLASS >>>
-Plug 'svermeulen/vim-cutlass'
-nnoremap x d
-xnoremap x d
-
-nnoremap xx dd
-nnoremap X D
-
 
 " ------------------------------------------------------------------------------------------------------
 
@@ -70,6 +74,8 @@ Plug 'rhysd/vim-textobj-word-column'
 " Expand code regions above and below selected block
 vnoremap = o{o}
 
+
+" SWAP PARAMETERS >>>
 Plug 'vim-scripts/sideways.vim'
 nnoremap <leader>pl :SidewaysLeft<cr>
 nnoremap <leader>pr :SidewaysRight<cr>
@@ -78,7 +84,7 @@ nnoremap <leader>pr :SidewaysRight<cr>
 " EMMET >>>
 Plug 'mattn/emmet-vim'
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,xml EmmetInstall
 
 let g:user_emmet_mode='a'    "enable all function in all mode.
 let g:user_emmet_leader_key = ','
@@ -176,12 +182,11 @@ Plug 'tyewang/vimux-jest-test'
 
 
 " MATCH LINES >>>
-imap <c-f><c-s> <plug>(fzf-complete-line)
+imap <c-f><c-i> <plug>(fzf-complete-line)
 
-" BREAK LINES >>>
-" Plug 'andrewradev/splitjoin.vim'
+" EMACS FOCUS REGION
+Plug 'chrisbra/nrrwrgn'
+
 
 " vim:ft=vim
-
-
 

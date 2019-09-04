@@ -40,7 +40,13 @@ nnoremap <Leader>bl R<CR><Esc>
 nnoremap <leader><space> i<space><esc>
 
 nnoremap <space> i
-"
+
+nnoremap <leader>map :verbose :map<space>
+
+au filetype typescript nnoremap <leader>noc :g/\/\//d<CR>
+au filetype typescript nnoremap <leader>nol :g/console.log/d<CR>
+au filetype html nnoremap <leader>noc :g/<!--/d<CR>
+
 " nnoremap <silent><leader><leader>i
 
 " Quick sourcing of the current file, allowing for quick vimrc testing
@@ -77,14 +83,14 @@ noremap Y y$
 " noremap N Nzz
 
 augroup vimrcEx
-  autocmd!
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it for commit messages, when the position is invalid, or when
-  " inside an event handler (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-        \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-        \   exe "normal g`\"" |
-        \ endif
+      autocmd!
+      " When editing a file, always jump to the last known cursor position.
+      " Don't do it for commit messages, when the position is invalid, or when
+      " inside an event handler (happens when dropping a file on gvim).
+      autocmd BufReadPost *
+                        \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
+                        \   exe "normal g`\"" |
+                        \ endif
 augroup END
 
 if has('mouse') | set mouse=a | endif
@@ -111,14 +117,14 @@ command! -bang WQ wq<bang>
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
-      \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-      \gvy/<C-R><C-R>=substitute(
-      \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-      \gV:call setreg('"', old_reg, old_regtype)<CR>
+                  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+                  \gvy/<C-R><C-R>=substitute(
+                  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+                  \gV:call setreg('"', old_reg, old_regtype)<CR>
 vnoremap <silent> # :<C-U>
-      \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-      \gvy?<C-R><C-R>=substitute(
-      \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-      \gV:call setreg('"', old_reg, old_regtype)<CR>
+                  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+                  \gvy?<C-R><C-R>=substitute(
+                  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+                  \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 " vim:ft=vim

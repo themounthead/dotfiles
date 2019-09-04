@@ -16,6 +16,14 @@ Plug 'gwww/vim-bbye'
 " use <Leader>ww
 Plug 'wesq3/vim-windowswap'
 
+" TILED WINDOW MGMT
+" use C-j for toggle pane
+" Plug 'spolu/dwm.vim'
+
+" RESIZE PANES AUTO
+" Plug 'justincampbell/vim-eighties'
+
+
 " FZF >>>
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -54,7 +62,7 @@ nnoremap <Leader>tag :BTags<CR>
 " nnoremap <silent> <leader>GP :UncommitedFiles<cr>
 
 function! s:all_help_files()
-      return join(map(split(&runtimepath, ','), 'v:val ."\/doc\/tags"'), ' ')
+   return join(map(split(&runtimepath, ','), 'v:val ."\/doc\/tags"'), ' ')
 endfunction
 let full_help_cmd = "cat ". s:all_help_files() ." 2> /dev/null \| grep -i '^[a-z]' \| awk '{print $1}' \| sort"
 

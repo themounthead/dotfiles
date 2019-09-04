@@ -18,6 +18,20 @@ inoremap <F3> <Esc>:Autoformat<CR>:StripWhitespace<CR>:w<CR>
 " autocmd BufWrite * :Autoformat
 " ---------------------------------------------------------------------------------
 
+" SORT CONTENT
+" gsip => Sort the current paragraph
+Plug 'christoomey/vim-sort-motion'
+
+" TABULAR
+Plug 'godlygeek/tabular'
+" if exists(":Tabularize")
+nmap <Leader>al= :Tabularize /=<CR>
+vmap <Leader>al= :Tabularize /=<CR>
+nmap <Leader>al: :Tabularize /:\zs<CR>
+vmap <Leader>al: :Tabularize /:\zs<CR>
+vmap <Leader>al[ :Tabularize /{<CR>
+" endif
+
 " YAML FORMATTER
 " Plug 'stephpy/vim-yaml'
 Plug 'tarekbecker/vim-yaml-formatter'
@@ -25,13 +39,15 @@ au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 Plug 'ekalinin/dockerfile.vim'
 
+au BufRead,BufNewFile *.tns.html setfiletype xml
+
 " INDENT GUIDES >>>
 Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 let g:indent_guides_auto_colors = 0
-au VimEnter,ColorScheme * hi IndentGuidesOdd  ctermbg=black
+au VimEnter,ColorScheme * hi IndentGuidesOdd  ctermbg=236
 au VimEnter,ColorScheme * hi IndentGuidesEven ctermbg=234
 " ---------------------------------------------------------------------------------
 
@@ -74,5 +90,8 @@ nnoremap <Leader>rlt :RainbowLevelsToggle<cr>
 " CLEAR WHITESPACE >>>
 Plug 'ntpeters/vim-better-whitespace'
 nnoremap <leader>wht :StripWhitespace<cr>:w<cr>
+
+" SPLIT JOIN LINES
+Plug 'andrewradev/splitjoin.vim'
 
 " vim:ft=vim

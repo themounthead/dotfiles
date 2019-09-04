@@ -1,6 +1,7 @@
-
 " COLOR SCHEMES >>>
 Plug 'flazz/vim-colorschemes'
+" Plug 'wolf-dog/nighted.vim'
+" Plug 'dracula/vim'
 " Plug 'morhetz/gruvbox'
 " Plug 'mhartington/oceanic-next'
 " Plug 'cocopon/iceberg.vim'
@@ -12,14 +13,11 @@ endif
 " set termguicolors
 
 set background=dark
-colorscheme janah
-" colorscheme iceberg
-" colorscheme sacredforest
-" colorscheme onedark
-" colorscheme tir_black " black
-" colorscheme jellybeans
-" colorscheme darth
-" colorscheme heroku-terminal
+" colorscheme janah
+" colorscheme blaquemagick
+" colorscheme dracula
+colorscheme pt_black " black
+" colorscheme nazca
 " colorscheme OceanicNext
 " colorscheme gruvbox " grey
 
@@ -52,6 +50,7 @@ au InsertLeave * highlight LineNr ctermfg=darkgrey ctermbg=none
 
 " LIGHTLINE >>>
 Plug 'itchyny/lightline.vim'
+Plug 'wolf-dog/lightline-nighted.vim'
 " Plug '844196/lightline-badwolf.vim'
 " Plug 'shirataki/lightline-onedark'
 " Plug 'mgee/lightline-bufferline'
@@ -97,7 +96,8 @@ let g:lightline = {
 Plug 'taohex/lightline-buffer'
 " lightline-buffer ui settings
 
-let g:lightline.colorscheme = 'solarized'
+let g:lightline.colorscheme = 'nighted'
+" let g:lightline.colorscheme = 'solarized'
 
 " lightline-buffer function settings
 let g:lightline_buffer_show_bufnr = 0
@@ -136,5 +136,6 @@ let g:webdevicons_enable_nerdtree = 1
 let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 " vim:ft=vim
 "
-"
-"
+
+
+

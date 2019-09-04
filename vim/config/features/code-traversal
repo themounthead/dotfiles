@@ -1,5 +1,8 @@
 
+" MARKS
 Plug 'jeetsukumaran/vim-markology'
+" Plug 'junegunn/vim-peekaboo'
+" Plug 'yilin-yang/vim-markbar'
 
 " AUTO TAG >>>
 " Plug 'majutsushi/tagbar'
@@ -10,11 +13,12 @@ let g:autotagTagsFile="tags"
 Plug 'rhysd/clever-f.vim'
 
 " QUICK SCOPING >>>
-Plug 'unblevable/quick-scope'
-let g:qs_enable=0
-let g:qs_max_chars=140
-let g:qs_lazy_highlight = 1
-nmap <leader>qst <plug>(QuickScopeToggle)
+" Plug 'unblevable/quick-scope'
+" let g:qs_enable=1
+" let g:qs_max_chars=140
+" let g:qs_lazy_highlight = 0
+" let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+" nmap <leader>qst <plug>(QuickScopeToggle)
 
 " MOTION >>>
 " Plug 'yuttie/comfortable-motion.vim'

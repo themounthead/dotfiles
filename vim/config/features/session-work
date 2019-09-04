@@ -67,4 +67,7 @@ if &term == 'xterm-256color'
 endif
 " ---------------------------------------------------------------------------------
 
+" WRITING
+Plug 'junegunn/goyo.vim'
+
 " vim:ft=vim

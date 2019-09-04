@@ -15,8 +15,12 @@ Plug 'vim-scripts/SyntaxRange'
 " JSON syntax >>>
 Plug 'elzr/vim-json'
 
-" Css >>>
+" CSS >>>
 Plug 'hail2u/vim-css3-syntax'
+
+" SCSS >>>
+Plug 'cakebaker/scss-syntax.vim'
+" Plug 'shmargum/vim-sass-colors'
 
 " ---------------------------------------------------------------------------------------
 
